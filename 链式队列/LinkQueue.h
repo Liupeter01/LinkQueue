@@ -4,7 +4,7 @@
 #include<Windows.h>
 #include<assert.h>
 
-#define ERRORCODE 1
+#define ERRORCODE 0x7ffffff
 #define ElemType int
 
 typedef struct LinkNode       //Á´±í
