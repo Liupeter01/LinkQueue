@@ -5,6 +5,7 @@
 #include<assert.h>
 
 #define ElemType int
+#define ERRORCODE 0x7ffffff
 
 typedef struct LinkNode       //链表
 {
@@ -18,20 +19,19 @@ typedef struct LinkQueue      //链式队列
           LinkNode* rear;     //尾指针
 }LinkQueue;
 
+LinkNode* CreateNode(ElemType data);				  //创建结点
+BOOL IsQueueEmpty(LinkQueue Q);              //链式队列的判空
+
 /*链式队列的初始化摧毁与清除功能*/
 void InitLinkQueue(LinkQueue* Q);           //链式队列的初始化
 void ClearLinkQueue(LinkQueue* Q);           //链式队列的清除
 void DestroyLinkQueue(LinkQueue* Q);           //链式队列的摧毁
 
 /*链式队列的显示输出*/
-void DisplayLinkQueue(LinkQueue* Q);           //链式队列的输出
-
-/*判空以及判满操作*/
-BOOL IsQueueEmpty(LinkQueue Q);              //链式队列的判空
-BOOL IsQueueFull(LinkQueue Q);              //链式队列的判满
+void DisplayLinkQueue(LinkQueue Q);           //链式队列的输出
 
 /*入队以及出队操作*/
-BOOL EnQueue(LinkQueue* Q, ElemType x);            //链式队列的入队操作
+void EnQueue(LinkQueue* Q, ElemType x);          //链式队列的入队操作
 BOOL DeQueue(LinkQueue* Q, ElemType* e);             //链式队列的出队操作
 
 /*其他功能*/
