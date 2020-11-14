@@ -25,11 +25,10 @@ void ClearLinkQueue(LinkQueue* Q);           //链式队列的清除
 void DestroyLinkQueue(LinkQueue* Q);           //链式队列的摧毁
 
 /*链式队列的显示输出*/
-void DisplayLinkQueue(LinkQueue* Q);           //链式队列的输出
+void DisplayLinkQueue(LinkQueue Q);         //链式队列的输出
 
 /*判空以及判满操作*/
 BOOL IsQueueEmpty(LinkQueue Q);              //链式队列的判空
-BOOL IsQueueFull(LinkQueue Q);              //链式队列的判满
 
 /*入队以及出队操作*/
 void EnQueue(LinkQueue* Q, ElemType x);            //链式队列的入队操作
