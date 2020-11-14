@@ -2,6 +2,7 @@
 
 int main()
 {
-
+          LinkQueue queue;
+          InitLinkQueue(&queue);
           return 0;
 }

@@ -4,7 +4,6 @@
 #include<Windows.h>
 #include<assert.h>
 
-
 #define ElemType int
 
 typedef struct LinkNode       //Á´±í
