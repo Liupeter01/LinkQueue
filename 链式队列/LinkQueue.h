@@ -35,5 +35,5 @@ void EnQueue(LinkQueue* Q, ElemType x);          //链式队列的入队操作
 BOOL DeQueue(LinkQueue* Q, ElemType* e);             //链式队列的出队操作
 
 /*其他功能*/
-ElemType GetHead(LinkQueue Q);              //链式队列获取队头的值
+ElemType GetTop(LinkQueue Q);              //链式队列获取队头的值
 int length(LinkQueue Q);                 //链式队列长度

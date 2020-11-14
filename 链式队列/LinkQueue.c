@@ -18,14 +18,21 @@ void InitLinkQueue(LinkQueue* Q)           //链式队列的初始化
 
 void ClearLinkQueue(LinkQueue* Q)           //链式队列的清除
 {
-		  LinkNode* ptr = Q->front->next;		  //跳过头结点
-		  while (ptr != NULL)
+		  if (IsQueueEmpty(*Q))
 		  {
-					LinkNode* ptemp = ptr;
-					ptr = ptr->next;
-					free(ptemp);
+					Q->rear = Q->front;
 		  }
-		  Q->rear = Q->front;
+		  else
+		  {
+					LinkNode* ptr = Q->front->next;		  //跳过头结点
+					while (ptr != NULL)
+					{
+							  LinkNode* ptemp = ptr;
+							  ptr = ptr->next;
+							  free(ptemp);
+					}
+					Q->rear = Q->front;
+		  }
 }
 
 void DestroyLinkQueue(LinkQueue* Q)           //链式队列的摧毁
@@ -91,7 +98,7 @@ BOOL DeQueue(LinkQueue* Q, ElemType* e)             //链式队列的出队操作
 		  return FALSE;
 }
 
-ElemType GetHead(LinkQueue Q)              //链式队列获取队头的值
+ElemType GetTop(LinkQueue Q)             //链式队列获取队头的值
 {
 		  return ((!IsQueueEmpty(Q)) ? Q.front->next->data : ERRORCODE);
 }
